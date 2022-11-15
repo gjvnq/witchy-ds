@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Witchy Design System</title>
+    <link rel="stylesheet" href="css/font-inter.css" />
+    <link rel="stylesheet" href="css/font-stix.css" />
+    <link rel="stylesheet" href="css/witchy-full.css" />
+    <style>
+
+
+ruby:has(ruby) { ruby-position: under; }
+ruby  ruby { ruby-position: over; }
+    </style>
+</head>
+<body class="wds-simple-page">
+    <article class="main-block">
+        <h1>Witchy Design System</h1>
+        <h2>Citation Style</h2>
+        <p>WDS has its own citations style that is meant to handle both traditional things (like books, articles, court cases, laws) and “weird things” (like tweets, instant messaging, street art, anonymous posts).</p>
+        <p>This style is designed mainly for interactive web usage, so it assumes that ruby, hyperlinks are possible and that tooltips can be used to show extra information like authors ORCIDs.</p>
+        <p>General rules:</p>
+        <ol>
+            <li>List items are separated with semi-colons (;). (the only good thing from the ABNT style, I guess)</li>
+            <li>Avoid all caps wherever possible, including in legal names.</li>
+            <li>For natural people, use their preferred or stage name unless it would cause confusion (e.g. in court cases as they tend to use people's full legal name instead of stage names).</li>
+            <li>If an author's name ordering preference is not known, match the ordering used by the other authors of the cited work. If that is not possible or is ambiguous, prefer first name followed by last name. Examples: <ul>
+                <li><em>Leonardo da Vinci</em>, instead of <em>da Vinci, Leonardo</em>,</li>
+                <li><em>George Orwell</em> instead of <em>Eric Arthur Blair</em>.</li>
+            </ul></li>
+            <li>For groups and corporate authors, use their abbreviation (if common) followed by their common name even when their legal name is different. Examples: <ul>
+                <li><em>NoA - Nintendo of America</em></li>
+                <li><em>Facebook Brasil”, but not “Facebook Serviços Online do Brasil Ltda.</em></li>
+            </ul></li>
+            <li>For Sovereign States, prefer the abbreviation if well known (e.g. USA), then the country name (e.g. Brazil) and then the state name (e.g. People's Republic of China). Only use this last option is the previous ones aren't a good fit.</li>
+            <li>When an author's name requires a “hierarchy”, separate the elements with chevron looking brackets (❭). Examples: <ul>
+                <li><em>USA ❭ FDA - Food and Drug Administration</em>,</li>
+                <li><em>Brasil ❭ São Paulo ❭ Secretaria Estadual de Cultura</em>, but not <em>Brasil ❭ Secretaria Estadual de Cultura</em> as that would be redundant,</li>
+                <li><em>BR ❭ São Paulo ❭ TCM - Tribunal de Contas do Município</em> note that the state was skipped, which is permitted as it doesn't lead to ambiguity in context,</li>
+                <li><em>EMA - European Medicine Agency</em> but not <em>European Union ❭ EMA - European Medicine Agency</em> because that's redundant.</li>
+            </ul></li>
+            <li>Use ruby above the words to show pronunciation and ruby below to show meaning. E.g. <ruby><ruby>旧<rt>jiù</ruby><ruby>金<rt>jīn</ruby><ruby>山<rt>shān</ruby><rt>San Francisco</ruby>, <ruby>Euler<rt>/ˈɔɪlər/</ruby>.</li>
+            <li>When ruby isn't a good fit, use square brackets to show the translation. Examples:<ul>
+                <li><em>BR ❭ MPT - Ministério Público do Trabalho [Labour Public Ministry]</em></li>
+                <li><em>BR ❭ INCRA - Instituto Nacional de Colonização e Reforma Agrária [National Institute for Colonization and Land Reform]</em></li>
+                <li><em>Universidade de São Paulo [University of <s>Saint Paul</s>São Paulo] ❭ STI - Superintendência de Tecnologia da Informação [Information Technology Superintendency]</em></li>
+                <li><em>BR ❭ SESC - Serviço Social do Comércio [Commerce Social Service]</em></li>
+            </ul></li>
+        </ol>
+        <p>The order of elements is:</p>
+        <ol>
+            <li><u>Identifier</u> - A short code, surrounded by square brackets, selected by the author doing the citing to identify the work being cited throughout the main text. It can be as simple as sequential numbers but more commonly it's an abbreviation of the work's title. Examples: <ul>
+                <li><em>CF/88</em> to refer to the current Brazilian constitution,</li>
+                <li><em>IoG</em> to refer to the <em>Instrument of Government</em> (1653) from the English Revolution,</li>
+                <li><em>DDFC</em> to refer to the <em lang="fr">Déclaration des droits de la femme et de la citoyenne</em>,</li>
+                <li><em>NetzDG</em> to refer to the <em lang="de">Netzwerkdurchsetzungsgesetz</em>.</li>
+            </ul></li>
+            <li><u>Author</u> - The commonly used name of the people who are considered responsible for the work. For laws (including regulations), use the authority's name.</li>
+            <li><u>Work type and size</u> - E.g. “book, 400 pages”, “web page, 700 words”, “oil on canvas painting”, “quipu, 50 strings”, “software, 15 kSLoC”.</li>
+            <li><u>Title</u> </li>
+            <li><u>Version info</u></li>
+            <li><u>Collection</u> - The name of where the work was published in. It can be the journal's title, the book's title for a citation of a book chapter, the website/newspaper name, etc.</li>
+            <li><u>Ementa/Abstract</u> </li>
+            <li><u>Contributors</u> (e.g. relator, appellant, claimant, etc.)</li>
+            <li><u>Notes</u> </li>
+            <li><u>Permanent identifiers</u> (e.g. ISBN, DOI, etc.)</li>
+            <li><u>Original/Main location</u> (.e.g publisher's name and city or original URL; access date is discouraged, use archival or the version field)</li>
+            <li><u>Archival/Secondary location</u> (.e.g library's name and city or mirror/archival URL)</li>
+        </ol>
+    </article>
+</body>
+</html>

@@ -1,0 +1,128 @@
+.clearfix {
+    @include clearfix();
+}
+
+@each $color, $value in $theme-colors {
+    $color-rgb: to-rgb($value);
+    .text-bg-#{$color} {
+        color: color-contrast($value) if($enable-important-utilities, !important, null);
+        background-color: RGBA($color-rgb, var(--#{$prefix}bg-opacity, 1)) if($enable-important-utilities, !important, null);
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .link-#{$color} {
+        color: $value !important; // stylelint-disable-line declaration-no-important
+
+        @if $link-shade-percentage != 0 {
+            &:hover,
+            &:focus {
+                color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage)) !important; // stylelint-disable-line declaration-no-important
+            }
+        }
+    }
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+}
+
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+}
+
+// Responsive sticky top and bottom
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .sticky#{$infix}-top {
+            position: sticky;
+            top: 0;
+            z-index: $zindex-sticky;
+        }
+
+        .sticky#{$infix}-bottom {
+            position: sticky;
+            bottom: 0;
+            z-index: $zindex-sticky;
+        }
+    }
+}
+
+.ratio {
+    position: relative;
+    width: 100%;
+
+    &::before {
+        display: block;
+        padding-top: var(--#{$prefix}aspect-ratio);
+        content: "";
+    }
+
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@each $key, $ratio in $aspect-ratios {
+    .ratio-#{$key} {
+        --#{$prefix}aspect-ratio: #{$ratio};
+    }
+}
+
+.hstack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+}
+
+.vstack {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.stretched-link {
+    &::#{$stretched-link-pseudo-element} {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: $stretched-link-z-index;
+        content: "";
+    }
+}
+
+.text-truncate {
+    @include text-truncate();
+}
+
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+    @include visually-hidden();
+}
+
+.vr {
+    display: inline-block;
+    align-self: stretch;
+    width: 1px;
+    min-height: 1em;
+    background-color: currentcolor;
+    opacity: $hr-opacity;
+}

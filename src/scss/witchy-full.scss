@@ -1,0 +1,55 @@
+@import "mixins/_banner";
+@include bsBanner("");
+
+// Configuration
+@import "functions";
+@import "variables";
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+// Layout & components
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+
+// Helpers
+@import "helpers";
+
+// Utilities
+@import "utilities/api";
+
+body {
+    padding: 4px;
+    background-color: var(--wds-gray-100);
+}
+
+@media (min-width: map-get($grid-breakpoints, 'sm')) {
+    html {
+        padding: 12px;
+    }
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+    font-family: var(--#{$prefix}font-serif);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: map-get($grid-breakpoints, 'sm')) {
+    article p {
+        text-align: justify;
+    }
+}
+
+.wds-simple-page > .main-block {
+    margin: 0 auto;
+    max-width: $max-text-width;
+    padding: 2px;
+}

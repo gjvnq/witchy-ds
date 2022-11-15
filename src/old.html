@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test page</title>
+    <link rel="stylesheet" href="css/reboot.css" />
+    <link rel="stylesheet" href="css/font-inter.css" />
+    <link rel="stylesheet" href="css/font-stix.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="documentation-megablock">
+      <p>TODO: code samples, kbd tag, samp tag, figures, images, figures, var tag, tables, ruby</p>
+      <p>TODO: add nice border on focus</p>
+      <p>Big thing: translation and transcription notes (interpolation, page number, explanations, etc) styling</p>
+      <p>Big thing: user togglable CSS-based text hints (like show the translation of common terms)</p>
+      <p>Big thing: component for parallel text</p>
+      <p>Big thing: component for user togglable parallel text</p>
+      <p>Big thing: footnotes (idea: user details tag, other idea: use endnotes but autocopy the innerhtml with JS)</p>
+      <p>Big thing: side note</p>
+      <p>Big thing: interlinear text</p>
+      <p>Big thing: citation component (with option to copy bibtext)</p>
+      <p>Big thing: citation component (with option to select the citation style)</p>
+      <p>Big thing: add math</p>
+      <p>Big thing: add LaTeX line break</p>
+
+
+      <p>i18n thing: test RTL</p>
+      <p>i18n thing: test vertical japanese</p>
+    </div>
+
+    <div class="documentation-megablock">
+      <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+      <p><del class="css-content">This line of text is meant to be treated as deleted text. (<code>.css-content</code>)</del></p>
+      <p><del class="del-wavy">This line of text is meant to be treated as deleted text. (<code>.del-wavy</code>)</del></p>
+      <p><s>This line of text is meant to be treated as no longer accurate. </s></p>
+      <p><del class="del-mark">This line of text is meant to be treated as deleted text.(<code>.del-mark</code>)</del></p>
+      <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+      <p><ins class="css-content">This line of text is meant to be treated as an addition to the document. (<code>.css-content</code>)</ins></p>
+      <p><ins class="ins-wavy">This line of text is meant to be treated as an addition to the document. (<code>.css-wavy</code>)</ins></p>
+      <p><ins class="ins-mark">This line of text is meant to be treated as an addition to the document. (<code>.ins-mark</code>)</ins></p>
+      <p><u>This line of text will render as underlined.</u></p>
+      <p class="text-decor-underline-wavy text-decor-overline-wavy">This line of text will render as underlined and overline wavy.</p>
+      <p><small>This line of text is meant to be treated as fine print.</small></p>
+      <p><strong>This line rendered as bold text.</strong></p>
+      <p><em>This line rendered as italicized text.</em></p>
+      <p class="muted">This line rendered as muted text.</p>
+    </div>
+
+    <div class="documentation-megablock">
+      <p><abbr title="attribute">attr</abbr></p>
+      <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+    </div>
+
+    <div class="documentation-megablock">
+      <ul class="list-unstyled">
+        <li>This is a list.</li>
+        <li>It appears completely unstyled.</li>
+        <li>Structurally, it's still a list.</li>
+        <li>However, this style only applies to immediate child elements.</li>
+        <li>Nested lists:
+          <ul>
+            <li>are unaffected by this style</li>
+            <li>will still show a bullet</li>
+            <li>and have appropriate left margin</li>
+          </ul>
+        </li>
+        <li>This may still come in handy in some situations.</li>
+      </ul>
+
+      <ul class="list-inline">
+        <li class="list-inline-item">This is a list item.</li>
+        <li class="list-inline-item">And another one.</li>
+        <li class="list-inline-item">But they're displayed inline.</li>
+      </ul>
+
+      <dl>
+        <dt>Description lists</dt>
+        <dd>A description list is perfect for defining terms.</dd>
+
+        <dt>Term</dt>
+        <dd>
+          <p>Definition for the term.</p>
+          <p>And some more placeholder definition text.</p>
+        </dd>
+
+        <dt>Another term</dt>
+        <dd>This definition is short, so no extra paragraphs or anything.</dd>
+
+        <dttext-truncate">Truncated term is truncated</dt>
+        <dd>This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+
+        <dt>Nesting</dt>
+        <dd>
+          <dl>
+            <dt>Nested definition list</dt>
+            <dd>I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
+          </dl>
+        </dd>
+      </dl>
+    </div>
+
+    <div class="documentation-megablock">
+      <blockquote class="blockquote">
+        <p>A well-known quote, contained in a blockquote element.</p>
+      </blockquote>
+      <figure>
+        <blockquote class="blockquote">
+          <p>A well-known quote, contained in a blockquote element.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </figcaption>
+      </figure>
+      <figure class="text-center">
+        <blockquote class="blockquote">
+          <p>A well-known quote, contained in a blockquote element.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </figcaption>
+      </figure>
+      <figure class="text-end">
+        <blockquote class="blockquote">
+          <p>A well-known quote, contained in a blockquote element.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="documentation-megablock">
+      <h1><span>Heading 1</span> - <span class="serif">Heading 1</span></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur luctus orci, a ornare ex pulvinar tristique. Fusce in bibendum libero, at vestibulum massa. Quisque sagittis blandit elit sit amet rhoncus. Etiam in semper felis, et iaculis enim. Donec id est molestie risus dapibus sagittis. In enim ipsum, placerat ut molestie in, rhoncus non nulla.</p>
+      <h2><span>Heading 2</span> - <span class="serif">Heading 2</span></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur luctus orci, a ornare ex pulvinar tristique. Fusce in bibendum libero, at vestibulum massa. Quisque sagittis blandit elit sit amet rhoncus. Etiam in semper felis, et iaculis enim. Donec id est molestie risus dapibus sagittis. In enim ipsum, placerat ut molestie in, rhoncus non nulla.</p>
+      <h3><span>Heading 3</span> - <span class="serif">Heading 3</span></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur luctus orci, a ornare ex pulvinar tristique. Fusce in bibendum libero, at vestibulum massa. Quisque sagittis blandit elit sit amet rhoncus. Etiam in semper felis, et iaculis enim. Donec id est molestie risus dapibus sagittis. In enim ipsum, placerat ut molestie in, rhoncus non nulla.</p>
+      <h4><span>Heading 4</span> - <span class="serif">Heading 4</span></h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur luctus orci, a ornare ex pulvinar tristique. Fusce in bibendum libero, at vestibulum massa. Quisque sagittis blandit elit sit amet rhoncus. Etiam in semper felis, et iaculis enim. Donec id est molestie risus dapibus sagittis. In enim ipsum, placerat ut molestie in, rhoncus non nulla.</p>
+      <h5><span>Heading 5</span> - <span class="serif">Heading 5</span></h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur luctus orci, a ornare ex pulvinar tristique. Fusce in bibendum libero, at vestibulum massa. Quisque sagittis blandit elit sit amet rhoncus. Etiam in semper felis, et iaculis enim. Donec id est molestie risus dapibus sagittis. In enim ipsum, placerat ut molestie in, rhoncus non nulla.</p>
+      <h6><span>Heading 6</span> - <span class="serif">Heading 6</span></h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur luctus orci, a ornare ex pulvinar tristique. Fusce in bibendum libero, at vestibulum massa. Quisque sagittis blandit elit sit amet rhoncus. Etiam in semper felis, et iaculis enim. Donec id est molestie risus dapibus sagittis. In enim ipsum, placerat ut molestie in, rhoncus non nulla. In arcu massa, tristique in neque vel, porta sagittis purus. Ut a facilisis nibh. In condimentum dapibus lacus. Suspendisse ac posuere nunc. Fusce aliquet eros sed lectus interdum sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus rutrum velit, congue volutpat urna aliquam sit amet. Pellentesque in leo eget diam condimentum dictum.</p>
+      <p>Donec urna orci, suscipit a elementum id, dapibus in ante. Maecenas vehicula tincidunt ornare. Nunc congue tellus vel arcu lacinia finibus et condimentum enim. Integer dignissim nisl eget dapibus pretium. Suspendisse eget lorem euismod, vehicula mi eget, facilisis lorem. Nullam eleifend turpis eu urna tincidunt, ac tempor magna laoreet. Sed interdum rutrum sapien, a consectetur nunc consequat eget.</p>
+      <p>Fusce sit amet urna non felis feugiat blandit at in tortor. Pellentesque at neque euismod, luctus mi at, porta lacus. Pellentesque tincidunt mauris ac gravida dapibus. Sed id arcu nisl. Morbi lacinia interdum ante, eu lacinia mauris consequat id. Etiam porttitor urna non imperdiet lobortis. Mauris ac arcu sed velit tincidunt imperdiet id vel ligula. Fusce urna erat, dictum non vehicula a, vestibulum quis turpis. Cras egestas eget urna et rhoncus. Ut sagittis arcu vel viverra facilisis. Pellentesque imperdiet arcu nibh, sit amet interdum velit pellentesque ut. Etiam tristique metus augue, at placerat mauris varius nec.</p>
+      <p class="muted">Cras accumsan eget nibh sit amet laoreet. Morbi ut iaculis magna, aliquet pulvinar tortor. Duis commodo turpis quis orci efficitur, ut lacinia nulla maximus. Integer a lorem faucibus sapien laoreet venenatis. Aenean sit amet urna sem. In non laoreet dui, et feugiat nibh. In viverra lectus vitae luctus malesuada. Suspendisse quis massa et lectus fringilla cursus ut molestie sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu bibendum arcu, vel consequat quam.</p>
+      <p class="serif">Morbi bibendum nec sapien vel iaculis. Praesent luctus nunc et ex fringilla molestie. Donec aliquam aliquam vehicula. Aliquam tincidunt ligula non mauris placerat, quis venenatis elit pharetra. Cras eget laoreet elit. Nunc molestie dignissim leo in molestie. Nulla et dolor eu purus dapibus aliquet ac ut ante. Sed egestas et nibh non pellentesque. Suspendisse pretium ipsum vel sollicitudin tristique. Pellentesque egestas risus eu tellus ullamcorper, sed suscipit tortor accumsan. Sed eros tortor, elementum id venenatis nec, commodo quis mauris. Donec sed rutrum velit.</p>
+    </div>
+
+    <script src="http://localhost:8010/livereload.js"></script>
+    <!-- <script src="js/bundle.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "STIX Two Text";
+    src: url("/fonts/STIXTwoText[wght].woff2")
+    format("woff2-variations");
+    font-weight: 125 950;
+    size-adjust: 120%;
+    font-stretch: 75% 125%;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "STIX Two Text";
+    src: url("/fonts/STIXTwoText-Italic[wght].woff2")
+    format("woff2-variations");
+    size-adjust: 110%;
+    font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: oblique 10deg 30deg;
+}
+
+@font-face {
+    font-family: "STIX Two Math";
+    src: url("/fonts/STIXTwoMath-Regular.woff2")
+    format("woff2");
+}

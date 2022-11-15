@@ -1,0 +1,105 @@
+// some normalization stuff?
+html {
+  padding: 0 10px;
+}
+
+// core fonts
+html, body {
+  font-family: 'Inter var';
+  font-size: 16px;
+}
+
+.sans { font-family: "Inter Variable", sans-serif; }
+.serif { font-family: "STIX Two Text", serif; }
+
+.visible { visibility: visible !important; }
+.invisible { visibility: hidden !important; }
+
+// display property shortcuts
+.d-block { display: block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-inline-flex { display: inline-flex; }
+.d-none { display: none; }
+
+// text stuff
+.muted { color: #6c757d!important; }
+.mark, mark { background-color: #fff3cd;}
+.small, small { font-size: .875em; }
+.text-capitalize { text-transform: capitalize; }
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-small-caps { font-variant-caps: small-caps; }
+.text-tabular { font-variant-numeric: tabular-nums; }
+.text-fractions { font-variant-numeric: diagonal-fractions; }
+.text-break { word-break: break-all; }
+.text-decor-underline, u { text-decoration: underline; }
+.text-decor-line-through, s { text-decoration: line-through; }
+.text-decor-overline-wavy { text-decoration: overline wavy; }
+.text-decor-underline-wavy { text-decoration: underline wavy; }
+.text-decor-overline-wavy.text-decor-underline-wavy { text-decoration: overline underline wavy; }
+
+.user-select-all { user-select:all }
+.user-select-auto { user-select: auto; }
+.user-select-none { user-select: none; }
+
+.del-wavy {
+  text-decoration: underline wavy;
+  text-decoration-color: red;
+}
+.ins-wavy {
+  text-decoration: underline wavy;
+  text-decoration-color: green;
+}
+.ins-mark { background-color: #cdffcd;}
+ins.ins-mark { text-decoration: none; }
+.del-mark { background-color: #ffcdcd;}
+del.del-mark { text-decoration: none; }
+
+
+del.css-content {
+  & { text-decoration: none; }
+  &::before, &::after { color: red; }
+  &::before { content: "{- "; }
+  &::after { content: " -}"; }
+}
+ins.css-content {
+  & { text-decoration: none; }
+  &::before, &::after { color: green; }
+  &::before { content: "{+ "; }
+  &::after { content: " +}"; }
+}
+
+// headings
+h1 { font-size: calc(1.375rem + 1.5vw); }
+h2 { font-size: calc(1.325rem + .9vw); }
+h3 { font-size: calc(1.3rem + .6vw); }
+h4 { font-size: calc(1.275rem + .3vw); }
+h5 { font-size: 1.25rem;}
+h6 { font-size: 1rem; }
+
+// lists
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+.list-inline-item {
+  display: inline-block;
+}
+dl dl {
+  padding-inline-start: 2rem;
+}
+
+
+// Hacky stuff
+.documentation-megablock {
+  margin-block-start: 5rem;
+  padding: 4px;
+  border: 1px solid black;
+}

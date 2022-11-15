@@ -1,0 +1,16 @@
+# Dev mode
+version: '3.3'
+
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: "${UID:-1000}:${GID:-1000}"
+    working_dir: /app/src
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    volumes:
+      - ./:/app/src
+    command: "./entrypoint.sh"

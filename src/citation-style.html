@@ -8,10 +8,21 @@
     <link rel="stylesheet" href="css/font-stix.css" />
     <link rel="stylesheet" href="css/witchy-full.css" />
     <style>
-
-
-ruby:has(ruby) { ruby-position: under; }
-ruby  ruby { ruby-position: over; }
+        ruby:has(ruby) { ruby-position: under; }
+        ruby ruby { ruby-position: over; }
+        .citation-title { font-weight: bold; }
+        .citation-inside { font-style: italic; }
+        .citation-publisher { font-style: italic; }
+        .citation-identifier {
+            word-wrap: break-all !important;
+            word-break: break-all !important; }
+        .citation a {
+            color: unset;
+            /* filter: brightness(0.4); */
+        }
+        .citation a:hover {
+            color: var(--wds-link-hover-color);
+        }
     </style>
 </head>
 <body class="wds-simple-page">
@@ -50,13 +61,14 @@ ruby  ruby { ruby-position: over; }
         </ol>
         <p>The order of elements is:</p>
         <ol>
-            <li><u>Identifier</u> - A short code, surrounded by square brackets, selected by the author doing the citing to identify the work being cited throughout the main text. It can be as simple as sequential numbers but more commonly it's an abbreviation of the work's title. Examples: <ul>
+            <li><u>Identifier</u> - A short code, surrounded by square brackets, selected by the author doing the citing to identify the work being cited throughout the main text. It can be as simple as sequential numbers but more commonly it's an abbreviation of the work's title. This must have a <code>tabindex="0"</code> attribute to make the website better for blind users. Examples: <ul>
                 <li><em>CF/88</em> to refer to the current Brazilian constitution,</li>
                 <li><em>IoG</em> to refer to the <em>Instrument of Government</em> (1653) from the English Revolution,</li>
                 <li><em>DDFC</em> to refer to the <em lang="fr">Déclaration des droits de la femme et de la citoyenne</em>,</li>
                 <li><em>NetzDG</em> to refer to the <em lang="de">Netzwerkdurchsetzungsgesetz</em>.</li>
             </ul></li>
             <li><u>Author</u> - The commonly used name of the people who are considered responsible for the work. For laws (including regulations), use the authority's name.</li>
+            <li><u>Date</u> </li>
             <li><u>Work type and size</u> - E.g. “book, 400 pages”, “web page, 700 words”, “oil on canvas painting”, “quipu, 50 strings”, “software, 15 kSLoC”.</li>
             <li><u>Title</u> </li>
             <li><u>Version info</u></li>
@@ -68,6 +80,46 @@ ruby  ruby { ruby-position: over; }
             <li><u>Original/Main location</u> (.e.g publisher's name and city or original URL; access date is discouraged, use archival or the version field)</li>
             <li><u>Archival/Secondary location</u> (.e.g library's name and city or mirror/archival URL)</li>
         </ol>
+        <h3>Examples</h3>
+        <h4>Books and book chapters</h4>
+        <h4>Articles with clear authors</h4>
+        <p class="citation">
+            <span class="citation-local-identifier" tabindex="0">[DevRev-og]</span>
+            <span class="citation-author">Anne Vitale.</span>
+            <span class="citation-desc">Academic article, 20 pages.</span>
+            <span class="citation-date">2001.</span>
+            <span class="citation-title">Implications of Being Gender Dysphoric: A Developmental Review.</span>
+            In: <span class="citation-inside">Gender and Psychoanalysis</span> (vol. 6, issue 2, pages 121 to 141).
+            Publisher: <span class="citation-publisher">International Universities Press, Inc.</span>
+            Available at: <span class="citation-identifier">&lt;<a href="https://pep-web.org/browse/document/gap.006.0121a?page=P0121">https://pep-web.org/browse/document/gap.006.0121a?page=P0121</a>&gt;</span></p>
+        <p class="citation">
+            <span class="citation-local-identifier" tabindex="0">[DevRev-og]</span>
+            <span class="citation-author"><a href="https://www.avitale.com/about">Anne Vitale</a>, psychologist and WPATH member.</span>
+            <span class="citation-desc">Academic article, 20 pages.</span>
+            <span class="citation-date">2001.</span>
+            <span class="citation-title"><a href="https://pep-web.org/browse/document/gap.006.0121a?page=P0121">Implications of Being Gender Dysphoric: A Developmental Review</a>.</span> In: <span class="citation-inside">Gender and Psychoanalysis</span> (vol. 6, issue 2, pages 121 to 141).
+            Publisher: <span class="citation-publisher">International Universities Press, Inc.</span></p>
+        <p class="citation">
+            <span class="citation-local-identifier" tabindex="0">[DevRev]</span>
+            <span class="citation-author"><a href="https://www.avitale.com/about">Anne Vitale</a>, psychologist and WPATH member.</span>
+            <span class="citation-desc">Blog post, 7'000 words.</span>
+            <span class="citation-date">January 27, 2003.</span>
+            <span class="citation-title"><a href="https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5">The Gender Variant Phenomenon – A Developmental Review</a>.</span>
+            Original URL: <span class="citation-identifier">&lt;<a href="http://www.avitale.com/developmentalreview.htm">http://www.avitale.com/developmentalreview.htm</a>&gt;</span>
+            Archival URL as of February 16, 2003: <span class="citation-identifier">&lt;<a href="http://web.archive.org/web/20030216045459/http://www.avitale.com/developmentalreview.htm">http://web.archive.org/web/20030216045459/http://www.avitale.com/developmentalreview.htm</a>&gt;</span>
+            Current URL: <span class="citation-identifier">&lt;<a href="https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5">https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5</a>&gt;</span>
+            Archival URL as of October 17, 2022: <span class="citation-identifier">&lt;<a href="http://web.archive.org/web/20221007184657/https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5">http://web.archive.org/web/20221007184657/https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5</a>&gt;</span>
+        </p>
+        <p>Note how making the title clikable removes the "Available at" part. This is done to avoid redundancy.</p>
+        <p>Standards of Care for the Health of Transgender and Gender Diverse People, Version 8</p>
+        <p>Note that the version field is absent because this info is already on the title.</p>
+
+        <h4>Articles without clear authors (e.g. wiki)</h4>
+        <h4>Legal procedings</h4>
+        <h4>Laws and regulations</h4>
+        <h4>Letters and other communications</h4>
+        <h4>Paitings, sculptures and other "physical" art</h4>
+        <h4>Street art</h4>
     </article>
 </body>
 </html>

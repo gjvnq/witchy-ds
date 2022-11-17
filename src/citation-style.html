@@ -7,22 +7,41 @@
     <link rel="stylesheet" href="css/font-inter.css" />
     <link rel="stylesheet" href="css/font-stix.css" />
     <link rel="stylesheet" href="css/witchy-full.css" />
+    <script src="js/wds-selflink.js" type="module"></script>
+    <script src="js/wds-tooltip.js" type="module"></script>
     <style>
         ruby:has(ruby) { ruby-position: under; }
         ruby ruby { ruby-position: over; }
-        .citation-title { font-weight: bold; }
+        .citation-title { font-weight: bold; font-style: italic; }
         .citation-inside { font-style: italic; }
         .citation-publisher { font-style: italic; }
-        .citation-identifier {
+        .citation-identifier, .long-id {
             word-wrap: break-all !important;
             word-break: break-all !important; }
         .citation a {
             color: unset;
-            /* filter: brightness(0.4); */
+            text-decoration: none;
         }
         .citation a:hover {
             color: var(--wds-link-hover-color);
+            text-decoration: underline;
         }
+        a.dark-link {
+            color: unset;
+        }
+        a.dark-link:hover {
+            color: var(--wds-link-hover-color);
+        }
+        .citation-field-name {
+            font-weight: 500;
+        }
+        .citation2-title {
+            font-weight: bold;
+        }
+        .ignorable-info {
+            color: gray;
+        }
+
     </style>
 </head>
 <body class="wds-simple-page">
@@ -67,10 +86,10 @@
                 <li><em>DDFC</em> to refer to the <em lang="fr">Déclaration des droits de la femme et de la citoyenne</em>,</li>
                 <li><em>NetzDG</em> to refer to the <em lang="de">Netzwerkdurchsetzungsgesetz</em>.</li>
             </ul></li>
-            <li><u>Author</u> - The commonly used name of the people who are considered responsible for the work. For laws (including regulations), use the authority's name.</li>
+            <li><u>Author</u> - The commonly used name of the main people who are considered responsible for the work. For laws (including regulations), use the authority's name.</li>
+            <li><u>Title</u> </li>
             <li><u>Date</u> </li>
             <li><u>Work type and size</u> - E.g. “book, 400 pages”, “web page, 700 words”, “oil on canvas painting”, “quipu, 50 strings”, “software, 15 kSLoC”.</li>
-            <li><u>Title</u> </li>
             <li><u>Version info</u></li>
             <li><u>Collection</u> - The name of where the work was published in. It can be the journal's title, the book's title for a citation of a book chapter, the website/newspaper name, etc.</li>
             <li><u>Ementa/Abstract</u> </li>
@@ -83,39 +102,73 @@
         <h3>Examples</h3>
         <h4>Books and book chapters</h4>
         <h4>Articles with clear authors</h4>
-        <p class="citation">
-            <span class="citation-local-identifier" tabindex="0">[DevRev-og]</span>
-            <span class="citation-author">Anne Vitale.</span>
-            <span class="citation-desc">Academic article, 20 pages.</span>
-            <span class="citation-date">2001.</span>
-            <span class="citation-title">Implications of Being Gender Dysphoric: A Developmental Review.</span>
-            In: <span class="citation-inside">Gender and Psychoanalysis</span> (vol. 6, issue 2, pages 121 to 141).
-            Publisher: <span class="citation-publisher">International Universities Press, Inc.</span>
-            Available at: <span class="citation-identifier">&lt;<a href="https://pep-web.org/browse/document/gap.006.0121a?page=P0121">https://pep-web.org/browse/document/gap.006.0121a?page=P0121</a>&gt;</span></p>
-        <p class="citation">
-            <span class="citation-local-identifier" tabindex="0">[DevRev-og]</span>
-            <span class="citation-author"><a href="https://www.avitale.com/about">Anne Vitale</a>, psychologist and WPATH member.</span>
-            <span class="citation-desc">Academic article, 20 pages.</span>
-            <span class="citation-date">2001.</span>
-            <span class="citation-title"><a href="https://pep-web.org/browse/document/gap.006.0121a?page=P0121">Implications of Being Gender Dysphoric: A Developmental Review</a>.</span> In: <span class="citation-inside">Gender and Psychoanalysis</span> (vol. 6, issue 2, pages 121 to 141).
-            Publisher: <span class="citation-publisher">International Universities Press, Inc.</span></p>
-        <p class="citation">
+        <p class="citation2">
             <span class="citation-local-identifier" tabindex="0">[DevRev]</span>
-            <span class="citation-author"><a href="https://www.avitale.com/about">Anne Vitale</a>, psychologist and WPATH member.</span>
-            <span class="citation-desc">Blog post, 7'000 words.</span>
-            <span class="citation-date">January 27, 2003.</span>
-            <span class="citation-title"><a href="https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5">The Gender Variant Phenomenon – A Developmental Review</a>.</span>
-            Original URL: <span class="citation-identifier">&lt;<a href="http://www.avitale.com/developmentalreview.htm">http://www.avitale.com/developmentalreview.htm</a>&gt;</span>
-            Archival URL as of February 16, 2003: <span class="citation-identifier">&lt;<a href="http://web.archive.org/web/20030216045459/http://www.avitale.com/developmentalreview.htm">http://web.archive.org/web/20030216045459/http://www.avitale.com/developmentalreview.htm</a>&gt;</span>
-            Current URL: <span class="citation-identifier">&lt;<a href="https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5">https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5</a>&gt;</span>
-            Archival URL as of October 17, 2022: <span class="citation-identifier">&lt;<a href="http://web.archive.org/web/20221007184657/https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5">http://web.archive.org/web/20221007184657/https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5</a>&gt;</span>
+            <a class="dark-link" href="https://www.avitale.com/about">Anne Vitale</a>, psychologist.
+            <a href="https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5">The Gender Variant Phenomenon – A Developmental Review</a>.
+            January 27, 2003, blog post, 7'000 words.
+            <strong>In:</strong>
+            <a class="dark-link" href="https://www.avitale.com">www.avitale.com</a>
+            <strong>Archival copies:</strong>
+            <a class="dark-link" href="http://web.archive.org/web/20030216045459/http://www.avitale.com/developmentalreview.htm">as of February 16, 2003</a>;
+            <a class="dark-link" href="http://web.archive.org/web/20221007184657/https://www.avitale.com/essays-details/?name=the-gender-variant-phenomenon--a-developmental-review-5">as of October 17, 2022</a>.
         </p>
-        <p>Note how making the title clikable removes the "Available at" part. This is done to avoid redundancy.</p>
-        <p>Standards of Care for the Health of Transgender and Gender Diverse People, Version 8</p>
-        <p>Note that the version field is absent because this info is already on the title.</p>
+        <p class="citation2">
+            <span class="citation-local-identifier" tabindex="0">[SoC8]</span>
+            E. Coleman, <em>et al.</em>
+            <a href="https://www.tandfonline.com/doi/full/10.1080/26895269.2022.2100644">Standards of Care for the Health of Transgender and Gender Diverse People, Version 8</a>.
+            September 15, 2022, 560 page academic article/manual.
+            <strong>In:</strong>
+            <a class="dark-link" href="https://www.tandfonline.com/journals/wijt21">International Journal of Transgender Health</a> (ISSN: print: 1553-2739, web: 1434-4599).
+            <strong>Unofficial Ementa:</strong>
+            Establishes common guidelines for and sumarizes research on transgender healthcare.
+            <strong>By:</strong>
+            E. Coleman; A. E. Radix; W. P. Bouman; G. R. Brown; A. L. C. de Vries; M. B. Deutsch; R. Ettner; L. Fraser; M. Goodman; J. Green; A. B. Hancock; T. W. Johnson; D. H. Karasic; G. A. Knudson; S. F. Leibowitz; H. F. L. Meyer-Bahlburg; S. J. Monstrey; J. Motmans; L. Nahata; T. O. Nieder; S. L. Reisner; C. Richards; L. S. Schechter; V. Tangpricha; A. C. Tishelman; M. A. A. Van Trotsenburg; S. Winter; K. Ducheny; N. J. Adams; T. M. Adrián; L. R. Allen; D. Azul; H. Bagga; K. Başar; D. S. Bathory; J. J. Belinky; D. R. Berg; J. U. Berli; R. O. Bluebond-Langner; M.-B. Bouman; M. L. Bowers; P. J. Brassard; J. Byrne; L. Capitán; C. J. Cargill; J. M. Carswell; S. C. Chang; G. Chelvakumar; T. Corneil; K. B. Dalke; G. De Cuypere; E. de Vries; M. Den Heijer; A. H. Devor; C. Dhejne; A. D’Marco; E. K. Edmiston; L. Edwards-Leeper; R. Ehrbar; D. Ehrensaft; J. Eisfeld; E. Elaut; L. Erickson-Schroth; J. L. Feldman; A. D. Fisher; M. M. Garcia; L. Gijs; S. E. Green; B. P. Hall; T. L. D. Hardy; M. S. Irwig; L. A. Jacobs; A. C. Janssen; K. Johnson; D. T. Klink; B. P. C. Kreukels; L. E. Kuper; E. J. Kvach; M. A. Malouf; R. Massey; T. Mazur; C. McLachlan; S. D. Morrison; S. W. Mosser; P. M. Neira; U. Nygren; J. M. Oates; J. Obedin-Maliver; G. Pagkalos; J. Patton; N. Phanuphak; K. Rachlin; T. Reed; G. N. Rider; J. Ristori; S. Robbins-Cherry; S. A. Roberts; K. A. Rodriguez-Wallberg; S. M. Rosenthal; K. Sabir; J. D. Safer; A. I. Scheim; L. J. Seal; T. J. Sehoole; K. Spencer; C. St. Amand; T. D. Steensma; J. F. Strang; G. B. Taylor; K. Tilleman; G. G. T’Sjoen; L. N. Vala; N. M. Van Mello; J. F. Veale; J. A. Vencill; B. Vincent; L. M. Wesp; M. A. West; J. Arcelus.
+            <strong>Identifiers:</strong>
+            DOI: <a class="long-id dark-link" href="http://doi.org/10.1080/26895269.2022.2100644">10.1080/26895269.2022.2100644</a>.
+        </p>
+        <p>TODO: find a good numerical limit for the number of authors.</p>
+
 
         <h4>Articles without clear authors (e.g. wiki)</h4>
+        <p class="citation2">
+            <span class="citation-local-identifier" tabindex="0">[GDB]</span>
+            <a href="https://genderdysphoria.fyi">Gender Dysphoria Bible</a>.
+            Website/encyclopedia.
+            <strong>Ementa:</strong>
+            A resource for those questioning their gender, already on a gender journey, or simply wanting to learn more about what it is to be transgender.
+            <strong>Source code:</strong>
+            <wds-selflink protocol="https" href="github.com/GenderDysphoria/GenderDysphoria.fyi"></wds-selflink>.
+        </p>
+
         <h4>Legal procedings</h4>
+        <p class="citation2">
+            <span class="citation-local-identifier" tabindex="0">[ADO26]</span>
+            Brazil ❭ STF [Supreme Court].
+            <a href="https://portal.stf.jus.br/processos/detalhe.asp?incidente=4515053">Ação Direta de Inconstitucionalidade por Omissão Nº 26</a> [Direct Lawsuit of Unconstitutionality by Omission No. 26].
+            Lawsuit.
+            <strong>Unofficial ementa:</strong>
+            Questions the lack of criminalization of homotransphobic conducts. Article 5 incise XLII of the Brazilian Constitution criminalizes racism. Claimant alleges that said rule extends to crimalizing homotransphobic conducts.
+            <strong><ruby>Relator<rt>Rappourter</ruby>:</strong> Celso de Mello.
+            <strong><ruby>Requerente<rt>Claimant</ruby>:</strong> <ruby>Cidadania<rt>Citizenship</ruby>, political party.
+            <strong><ruby>Intimados<rt>Summoned</ruby>:</strong> Congresso Nacional [Brazilian Congress]; Presidente do Senado Federal [Speaker of the Brazilian Senate];
+            <strong>Identifiers:</strong>
+            Número único [unified number]: <a class="dark-link" href="https://portal.stf.jus.br/processos/detalhe.asp?incidente=4515053">9996923-64.2013.1.00.0000</a>.
+        </p>
+        <p class="citation2">
+            <span class="citation-local-identifier" tabindex="0">[ADO26]</span>
+            Brazil ❭ STF [Supreme Court].
+            <a href="https://portal.stf.jus.br/processos/downloadTexto.asp?id=4848010&ext=RTF">Decisão de Julgamento de 13/06/2019 da Ação Direta de Inconstitucionalidade por Omissão Nº 26</a> [Judgment of 13/Jul/2019 on the Direct Lawsuit of Unconstitutionality by Omission No. 26].
+            13 July 2019, court decision.
+            <strong>Unofficial ementa:</strong>
+            Questions the lack of criminalization of homotransphobic conducts. Article 5 incise XLII of the Brazilian Constitution criminalizes racism. Claimant alleges that said rule must be extended to the crimalization of homotransphobic conducts and that the National Congress failed in his duty to pass a law implementing it.
+            <strong><ruby>Relator<rt>Rappourter</ruby>:</strong> Celso de Mello.
+            <strong><ruby>Requerente<rt>Claimant</ruby>:</strong> <ruby>Cidadania<rt>Citizenship</ruby>, political party.
+            <strong><ruby>Intimados<rt>Summoned</ruby>:</strong> Congresso Nacional [Brazilian Congress]; Presidente do Senado Federal [Speaker of the Brazilian Senate];
+            <strong>Identifiers:</strong>
+            Número único [unified number]: <a class="dark-link" href="https://portal.stf.jus.br/processos/detalhe.asp?incidente=4515053">9996923-64.2013.1.00.0000</a>.
+        </p>
+
         <h4>Laws and regulations</h4>
         <h4>Letters and other communications</h4>
         <h4>Paitings, sculptures and other "physical" art</h4>

@@ -23,6 +23,7 @@
 body {
     padding: 4px;
     background-color: var(--wds-gray-100);
+    overflow-y: scroll; // This means all tabs of the same site will be aligned even if they don't have much content.
 }
 
 @media (min-width: map-get($grid-breakpoints, 'sm')) {
